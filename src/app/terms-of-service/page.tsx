@@ -33,11 +33,11 @@ export default function TermsOfService() {
       <li className="text-2xl font-bold">
        <h2 className="mb-4">Definitions</h2>
        <ul className="list-disc space-y-2 text-base font-normal mb-4">
-        <li><strong>’Company’ / ’We’ / ’Us’ / ’Our’</strong> means Lineage CRM, operated within the United States.</li>
-        <li><strong>’User’ / ’You’ / ’Your’</strong> refers to the individual or legal entity accessing or using the Service.</li>
-        <li><strong>’Account’</strong> means the unique account registered to access the Service.</li>
-        <li><strong>’Content’</strong> means all material (text, data, images, etc.) submitted, posted, or transmitted through the Service.</li>
-        <li><strong>’Website’</strong> refers to the Lineage CRM website available at <Link href={"/"}>https://www.lineagecrm.com</Link>.</li>
+        <li><strong>&quot;Company&quot; / &quot;We&quot; / &quot;Us&quot; / &quot;Our&quot;</strong> means Lineage CRM, operated within the United States.</li>
+        <li><strong>&quot;User&quot; / &quot;You&quot; / &quot;Your&quot;</strong> refers to the individual or legal entity accessing or using the Service.</li>
+        <li><strong>&quot;Account&quot;</strong> means the unique account registered to access the Service.</li>
+        <li><strong>&quot;Content&quot;</strong> means all material (text, data, images, etc.) submitted, posted, or transmitted through the Service.</li>
+        <li><strong>&quot;Website&quot;</strong> refers to the Lineage CRM website available at <Link href={"/"}>https://www.lineagecrm.com</Link>.</li>
        </ul>
       </li>
       <li className="text-2xl font-bold">
