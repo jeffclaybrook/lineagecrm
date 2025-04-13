@@ -1,103 +1,177 @@
-import Image from "next/image";
+"use client"
+
+import Image from "next/image"
+import Navbar from "@/components/navbar"
+import { motion } from "framer-motion"
+import { Checkmark, DialingAndMapping, EnhancedProductivity, SalesOptimizations } from "@/components/icons"
+
+const benefits = [
+ {
+  title: "Enhanced Productivity",
+  subtitle: "Streamline your sales process with automated lead management.",
+  icon: EnhancedProductivity
+ },
+ {
+  title: "Sales Optimizations",
+  subtitle: "Leverage detailed analytics to optimize your sales strategies.",
+  icon: SalesOptimizations
+ },
+ {
+  title: "Dialing and Mappping",
+  subtitle: "Utilize integrated Twilio calling for direct and efficient client interactions.",
+  icon: DialingAndMapping
+ }
+]
+
+const features = [
+ {
+  title: "New! Anti Spam Measures",
+  subtitle: "Manage your calling reputation and maintain trusted numbers so you can protect your communication channels with robust anti-spam features.",
+  image: "/image-1.png"
+ },
+ {
+  title: "Bulk Lead Import",
+  subtitle: "Migrate from excel or another CRM for the most optimized for end of life insurance. Easily import large volumes of leads to keep your pipeline full.",
+  image: "/image-2.png",
+  className: "order-first md:order-last"
+ },
+ {
+  title: "Caller and Team Access",
+  subtitle: "Manage and track all your calls directly within the CRM. Delegate access to your events, leads, calling, and tools so you can scale your impact.",
+  image: "/image-3.png"
+ }
+]
+
+const pricing = [
+ {
+  title: "Starter",
+  subtitle: "CRM + Lead Data",
+  price: "$39",
+  items: [
+   "Bulk lead import",
+   "1 phone number",
+   "Twilio in-app dialing",
+   "Anti-spam protection *per number"
+  ]
+ },
+ {
+  title: "Essentials",
+  subtitle: "CRM + Limited* VoIP",
+  price: "$79",
+  items: [
+   "2 days (16 hours) of calling",
+   "5 phone numbers",
+   "Team login",
+   "Anti-spam protection *per number"
+  ]
+ },
+ {
+  title: "Navigator",
+  subtitle: "CRM + Unlimited* VoIP",
+  price: "$139",
+  items: [
+   "Up to 40 hours weekly calling",
+   "10 phone numbers",
+   "Team login (Upline/Downline)",
+   "Anti-spam protection *per number"
+  ]
+ }
+]
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+ return (
+  <>
+   <Navbar />
+   <motion.header
+    initial={{ y: 20, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ ease: "easeInOut", duration: 1 }}
+    className="bg-linear-[98.46deg,#06323e,#0f554c] bg-cover bg-no-repeat md:rounded-4xl md:px-16 pt-8 px-4 max-w-7xl mx-auto flex flex-col md:flex-row md:items-center gap-8"
+   >
+    <div className="flex flex-col flex-1">
+     <h1 className="text-white text-6xl/18 font-semibold mb-4">Success Tools For Senior Market Insurance Agents</h1>
+     <p className="text-white font-medium mb-6">Capture, track, and analyze lead data in one integrated platform, ensuring that every customer interaction is meaningful and productive.</p>
+     <a href="https://app.lineagecrm.com" className="bg-linear-[90deg,#1ab95f_0%,#0da448_51%,#009033_100%] bg-cover bg-no-repeat text-white font-medium px-10 py-4 rounded-md mr-auto">Get Started</a>
     </div>
-  );
+    <div className="flex justify-center md:justify-end flex-1">
+     <Image
+      src="/person.png"
+      alt="Insurance agent"
+      width={400}
+      height={600}
+      priority
+     />
+    </div>
+   </motion.header>
+   <main>
+    <section id="benefits" className="flex flex-col items-center gap-[64px] py-[80px] p-6">
+     <h2 className="text-slate-700 text-5xl font-semibold">Benefits</h2>
+     <motion.ul
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 1 }}
+      className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto"
+     >
+      {benefits.map((benefit, i) => (
+       <li key={i} className="flex flex-col items-center gap-2">
+        <benefit.icon className="text-slate-700" />
+        <h3 className="text-slate-700 font-semibold text-xl text-center">{benefit.title}</h3>
+        <p className="text-slate-500 font-medium text-center">{benefit.subtitle}</p>
+       </li>
+      ))}
+     </motion.ul>
+    </section>
+    <section id="features" className="flex flex-col items-center gap-[64px] bg-slate-50 py-[80px] p-6 md:p-[80px]">
+     <h2 className="text-slate-700 text-5xl font-semibold">Features</h2>
+     {features.map((feature, i) => (
+      <motion.div
+       initial={{ y: 20, opacity: 0 }}
+       whileInView={{ y: 0, opacity: 1 }}
+       transition={{ ease: "easeInOut", duration: 1 }}
+       key={i}
+       className="flex flex-col md:flex-row md:gap-[72px] gap-6"
+      >
+       <Image
+        src={feature.image}
+        alt={feature.title}
+        width={600}
+        height={374}
+        className={feature.className}
+       />
+       <div className="flex flex-col justify-center">
+        <h3 className="text-slate-700 font-semibold text-4xl mb-2">{feature.title}</h3>
+        <p className="text-slate-700 text-xl">{feature.subtitle}</p>
+       </div>
+      </motion.div>
+     ))}
+    </section>
+    <section id="pricing" className="flex flex-col items-center gap-[64px] py-[80px] p-6 md:p-[80px]">
+     <h2 className="text-slate-700 text-5xl font-semibold">Pricing</h2>
+     <motion.ul
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 1 }}
+      className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto w-full"
+     >
+      {pricing.map((price, i) => (
+       <li key={i} className="flex flex-col p-5 py-8 bg-linear-[98.46deg,#06323e,#0f554c] bg-cover bg-no-repeat rounded-4xl">
+        <h3 className="text-white text-3xl text-center font-bold">{price.title}</h3>
+        <p className="text-slate-300 text-center mb-4">{price.subtitle}</p>
+        <h4 className="text-white text-6xl text-center font-bold mb-4">{price.price}<span className="text-slate-300 text-base font-medium">/mo</span></h4>
+        <ul className="flex flex-col gap-4 mb-4">
+         {price.items.map((item, i) => (
+          <li key={i} className="flex items-center gap-2 text-white">
+           <Checkmark />
+           <p>{item}</p>
+          </li>
+         ))}
+        </ul>
+        <a href="https://app.lineagecrm.com" className="inline-flex mx-auto rounded-md text-white font-medium px-10 py-4 bg-linear-[90deg,#1ab95f_0%,#0da448_51%,#009033_100%] bg-cover bg-no-repeat">Get Started</a>
+       </li>
+      ))}
+     </motion.ul>
+    </section>
+   </main>
+  </>
+ )
 }
